@@ -14,7 +14,7 @@ class Product extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
    
-    protected $table = 'Products';
+    protected $table = 'products';
      protected $fillable = [
         'nama',
         'kategori',
@@ -31,11 +31,11 @@ class Product extends Model
     ];
     public function insert($data)
     {
-       return DB::table('Products')->insert($data);
+       return DB::table('products')->insert($data);
     } 
     public function upd_produk($id,$data)
     {
-        return DB::table('Products')
+        return DB::table('products')
         ->where('id',$id)
         ->update($data);
     }
